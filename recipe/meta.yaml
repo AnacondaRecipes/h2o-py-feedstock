@@ -13,12 +13,13 @@ source:
 build:
   number: 0
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install  --no-deps and --no-build-isolation . -vv
 
 requirements:
   host:
     - pip
     - python >=3.6
+    - wheel
   run:
     - colorama >=0.3.8
     - future
@@ -43,5 +44,7 @@ about:
   license_file: LICENSE
 
 extra:
+  anaconda-services:
+   ref: https://anaconda.zendesk.com/agent/tickets/34209
   recipe-maintainers:
-    - xhochy
+    - ianaobi
