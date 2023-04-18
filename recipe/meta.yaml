@@ -18,12 +18,12 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python >=2.7
     - wheel
   run:
     - colorama >=0.3.8
     - future
-    - python >=3.6
+    - python >=2.7
     - requests
     - tabulate
     - numpy
