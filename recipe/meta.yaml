@@ -20,7 +20,8 @@ requirements:
     - python =2.7
     - wheel
   run:
-    - colorama >=0.3.8
+#    - colorama >=0.3.8
+    - colorama 
     - future
     - python =2.7
     - requests
