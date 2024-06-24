@@ -12,20 +12,21 @@ source:
 
 build:
   number: 0
-  noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install  --no-deps --no-build-isolation . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python =2.7
+    - wheel
   run:
     - colorama >=0.3.8
     - future
-    - python >=3.6
+    - python =2.7
     - requests
     - tabulate
     - numpy
+    - pyopenssl <20.0.0
 
 test:
   imports:
@@ -43,5 +44,7 @@ about:
   license_file: LICENSE
 
 extra:
+  anaconda-services:
+   ref: https://anaconda.zendesk.com/agent/tickets/34209
   recipe-maintainers:
     - ianaobi
